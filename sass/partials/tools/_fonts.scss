@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot?-plvix3');
+  src:url('../fonts/icomoon.eot?#iefix-plvix3') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?-plvix3') format('woff'),
+    url('../fonts/icomoon.ttf?-plvix3') format('truetype'),
+    url('../fonts/icomoon.svg?-plvix3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  // font-weight: normal;
+  font-variant: normal;
+  // text-transform: none;
+  // line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e600";
+}
+.icon-pencil:before {
+  content: "\e601";
+}
+.icon-camera:before {
+  content: "\e602";
+}
+.icon-tag:before {
+  content: "\e603";
+}
+.icon-phone:before {
+  content: "\e604";
+}
+.icon-mail:before {
+  content: "\e605";
+}
+.icon-googleplus:before {
+  content: "\e606";
+}
+.icon-facebook:before {
+  content: "\e607";
+}
+.icon-twitter:before {
+  content: "\e608";
+}
+.icon-wordpress:before {
+  content: "\e609";
+}

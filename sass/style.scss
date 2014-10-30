@@ -1,0 +1,24 @@
+/*!
+Theme Name: Jeroen Trispel theme
+Theme URI: http://mayconnect.org/trispel
+Author: Magalie Linda
+Author URI: http://mayconnect.org/
+Description: This theme is a theme for Jeroen Trispel Photography
+Version: 0.01
+Tags: responsive, blogging, clean, white, mobile
+*/
+
+@import "compass";
+@import "susy";
+@import "partials/tools/_variables.scss";
+@import "partials/tools/_mixins.scss";
+@import "partials/tools/_normalize.scss";
+@import "partials/tools/_overrides.scss";
+@import "partials/tools/_fonts.scss";
+@import "partials/_sitewide.scss";
+@import "partials/_base.scss";
+@import "partials/_frontpage.scss";
+@import "partials/_backgroundslide.scss";
+@import "partials/_mobile-nav.scss";
+@import "partials/page";
+

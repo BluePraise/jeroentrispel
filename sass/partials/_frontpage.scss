@@ -1,0 +1,30 @@
+section.portfolio {
+  @include at-breakpoint($wide-mobile) {
+    @include span-columns(4 ,6);
+  }
+  @include at-breakpoint($tablet) {
+    @include span-columns(2 ,8);
+  }
+  @include at-breakpoint($desktop) {
+    @include span-columns(3,9);
+    @include nth-omega(3);
+  }
+}
+
+ul.portfolio-list {
+  width: 100%;
+  float: left;
+  display: none;
+}
+
+.portfolio-item {
+  margin-bottom: 10px;
+}
+
+.portfolio-item-title {
+  display: inline-block;
+  img {
+    // @include box-shadow(inset 0px 0px 8px 1px rgb(56, 50, 50));
+    // @include border-radius(10px);
+  }
+}

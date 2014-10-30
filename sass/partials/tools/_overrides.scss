@@ -1,0 +1,19 @@
+// contains all overrides for plugins.
+%no-fonticons-here {
+	&:before,
+	&:after {
+		content: '';
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.no-hover-effect {
+  &:hover {
+    color: $black;
+    background-color: transparent;
+    outline: 0;
+    -webkit-transition: none;
+    transition: none;
+  }
+}

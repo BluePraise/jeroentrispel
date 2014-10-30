@@ -1,0 +1,218 @@
+body {
+  // @include background-size(cover);
+  // background-image: image-url('bg.jpg');
+  // filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg.jpg', sizingMethod='scale');
+  // -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg.jpg', sizingMethod='scale')";
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  .home & {
+    background: transparent;
+  }
+}
+
+#page {
+  position: relative;
+  @include container();
+  @if ($show-grid-backgrounds) {
+    @include susy-grid-background;
+  }
+  @include at-breakpoint($wide-mobile) {
+    margin-top: 110px;
+    @if ($show-grid-backgrounds) {
+      @include susy-grid-background;
+    }
+    .category-projects & {
+      margin-top: 70px;
+    }
+  }
+  @include at-breakpoint($tablet) {
+    margin-top: 80px;
+    @if ($show-grid-backgrounds) {
+      @include susy-grid-background;
+    }
+  }
+  @include at-breakpoint($desktop) {
+    @if ($show-grid-backgrounds) {
+      @include susy-grid-background;
+    }
+  }
+}
+
+.title {
+  background-color: $white;
+  padding: 0 5px;
+  float: left;
+  border-bottom: 4px solid #000;
+}
+
+h1.page-title {
+  padding-left: 50px;
+  margin-bottom: 0;
+  a {
+    color: $black !important;
+    @include font-size(48,48);
+    text-decoration: none;
+    @extend .no-hover-effect;
+  }
+}
+
+h2.page-title {
+  color: $black;
+  border-bottom: 4px solid $black;
+  text-align: right;
+  margin-top: 0;
+  .home & {
+    color: $white;
+    border-bottom: 4px solid $white;
+  }
+}
+
+aside {
+  clear: left;
+  @include at-breakpoint($wide-mobile) {
+    @include span-columns(2,6);
+  }
+  @include at-breakpoint($tablet) {
+    @include span-columns(2,10);
+  }
+  @include at-breakpoint($desktop) {
+    @include span-columns(2,12);
+  }
+  li {
+    margin-bottom: 5px;
+    display: block;
+    a {
+      display: block;
+      @include font-size(24,24);
+      text-transform: uppercase;
+      font-family: $oswald;
+    }
+    .sub-menu {
+      margin-left: 20px;
+      margin-top: 5px;
+      .home & {
+        color: $white;
+      }
+    }
+  }
+}
+
+#main {
+  @include at-breakpoint($wide-mobile) {
+    @include span-columns(4 omega, 6);
+  }
+  @include at-breakpoint($tablet) {
+    @include span-columns(8 omega, 10);
+  }
+  @include at-breakpoint($desktop) {
+    @include span-columns(7, 12);
+    border: 2px solid #F5F5F5;
+    padding: 1em;
+    border-radius: 4px;
+  }
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: 'Lora', serif;
+  color: $black;
+}
+
+footer {
+  clear: both;
+  width: 100%;
+  @include at-breakpoint($tablet) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  .home & {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 4px solid $black;
+  span, a, p {
+    color: $black;
+    @include font-size(24,24);
+    text-transform: uppercase;
+    font-family: $oswald;
+    .home & {
+      color: $white;
+    }
+  }
+  a:hover {
+    @extend .no-hover-effect;
+  }
+}
+.footer-info {
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.copyright {
+  width: 100%;
+  float: left;
+  @include at-breakpoint($desktop) {
+    @include span-columns(8,12);
+  }
+  span {
+    display: block;
+  }
+  .magalielinda {
+    margin-top: 15px;
+    a {
+      color: #2098B7 !important;
+    }
+  }
+}
+
+.social {
+  @include at-breakpoint($wide-mobile) {
+    @include span-columns(3 omega, 6);
+  }
+  @include at-breakpoint($desktop) {
+    @include span-columns(3 omega,12);
+  }
+  span:before {
+    text-decoration: none;
+    margin-right: 5px;
+    @include font-size(48, 48);
+  }
+  .facebook {
+    color: $color-facebook;
+  }
+  .google {
+    color: $color-google;
+  }
+  .twitter {
+    color: $color-twitter;
+  }
+}
+.edit-link {
+  display: inline-block;
+  .post-edit-link {
+    &:visited {
+    color: black;
+    }
+    @extend .no-hover-effect;
+  }
+  &:before {
+    font-family: 'icomoon';
+    display: inline-block;
+    content: "\e601";
+    margin-right: 10px;
+    color: black;
+  }
+}
