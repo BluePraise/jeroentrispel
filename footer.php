@@ -6,8 +6,7 @@
  * #main and #page div elements.
  */
 ?>
-
-  </div><!-- #main -->
+  </main><!-- #main -->
     <footer id="colophon" class="site-footer" role="contentinfo">
 
         <!-- <div class="footer-info contactinfo"> -->
@@ -26,7 +25,7 @@
           <span class="icon-twitter twitter"><a href="http://twitter.com"></a></span>
         </div> <!--end footerinfo -->
     </footer><!-- #colophon -->
-    </div><!-- #page -->
+</div><!-- #page -->
 
   <?php wp_footer(); ?>
 </body>

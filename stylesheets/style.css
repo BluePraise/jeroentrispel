@@ -676,6 +676,7 @@ h2.page-title {
 
 aside {
   clear: left;
+  position: relative;
 }
 @media (min-width: 460px) {
   aside {
@@ -696,6 +697,7 @@ aside {
     width: 14.89362%;
     float: left;
     margin-right: 2.12766%;
+    margin-top: 20px;
   }
 }
 aside li {
@@ -720,21 +722,21 @@ aside li .sub-menu {
 }
 
 @media (min-width: 460px) {
-  #main {
+  main.site-main {
     width: 65.21739%;
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 780px) {
-  #main {
+  main.site-main {
     width: 79.48718%;
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 940px) {
-  #main {
+  main.site-main {
     width: 57.44681%;
     float: left;
     margin-right: 2.12766%;

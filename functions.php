@@ -140,7 +140,7 @@ function googleweb_fonts_url() {
 // Add edit button for any specific content you
 // wish to edit.
 //=============================================
-function EmptyVanilla_edit_link() {
+function jeroentrispel_edit_link() {
   if ( ! post_password_required()) :
     edit_post_link( __( 'Edit', '' ), '<span class="edit-link">', '</span>' );
     endif;
@@ -185,7 +185,7 @@ function main_menu(){
 function register_main_menu() {
   register_nav_menus(array( // Using array to specify more menus if needed
     'main-menu' => __('Main Menu', 'jeroentrispel'), // Main Navigation
-    // 'sidebar-menu' => __('Sidebar Menu', 'classy'), // Sidebar Navigation
+    'social-menu' => __('Social Menu', 'jeroentrispel'), // Menu for the social icons
     // 'extra-menu' => __('Extra Menu', 'classy') // Extra Navigation if needed (duplicate as many as you need!)
   ));
 }

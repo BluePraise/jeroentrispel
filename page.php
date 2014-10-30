@@ -9,7 +9,7 @@ get_header();
 
 <?php
     the_content();
-    mayconnect_edit_link();
+    jeroentrispel_edit_link();
 
   ?>
 </article>

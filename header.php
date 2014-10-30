@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 7]><html class="ie ie7" <?php language_attributes(); ?>><![endif]-->
 <!--[if IE 8]><html class="ie ie8" <?php language_attributes(); ?>><![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!--><html <?php language_attributes(); ?>><!--<![endif]-->
 <!--[if lt IE 9]><script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5.js"></script><![endif]-->
 <head>
 
@@ -30,12 +28,26 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php if ( is_front_page() ) : ?>
+    <ul class="cb-slideshow">
+    <li><span>Image 01</span><div></div></li>
+    <li><span>Image 02</span><div></div></li>
+    <li><span>Image 03</span><div></div></li>
+    <li><span>Image 04</span><div></div></li>
+    <li><span>Image 05</span><div></div></li>
+    <li><span>Image 06</span><div></div></li>
+  </ul>
+<?php endif ?>
 <div id="page" class="hfeed">
   <header role="banner">
     <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'classy' ); ?></a>
     <h1 class="title page-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo('name'); ?></a></h1>
+    <?php wp_nav_menu( array( 'theme_location' => 'social-menu' ) ); ?>
 
   </header><!-- .site-header -->
 
-    <?php get_sidebar(); ?>
-    <div id="main" class="site-main" role="main">
+  <?php get_sidebar(); ?>
+
+  <?php if ( !is_front_page() ) : ?>
+    <main class="site-main" role="main">
+  <?php endif ?>
