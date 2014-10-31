@@ -539,7 +539,7 @@ dd {
   list-style: none;
 }
 
-.no-hover-effect:hover, h1.page-title a:hover, footer a:hover, .edit-link .post-edit-link:hover {
+.no-hover-effect:hover, footer a:hover, .edit-link .post-edit-link:hover {
   color: black;
   background-color: transparent;
   outline: 0;
@@ -559,7 +559,9 @@ dd {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
+  font-weight: normal;
   font-variant: normal;
+  text-transform: none;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -589,15 +591,18 @@ dd {
   content: "\e605";
 }
 
-.icon-googleplus:before {
+.icon-googleplus:before, li.google a:before {
+  font-family: 'icomoon';
   content: "\e606";
 }
 
-.icon-facebook:before {
+.icon-facebook:before, li.facebook a:before {
+  font-family: 'icomoon';
   content: "\e607";
 }
 
-.icon-twitter:before {
+.icon-twitter:before, li.twitter a:before {
+  font-family: 'icomoon';
   content: "\e608";
 }
 
@@ -611,9 +616,11 @@ header {
   top: 0;
   left: 0;
   background: white;
+  height: 120px;
 }
 .home header {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.6);
+  padding-top: 25px;
 }
 
 #page {
@@ -653,9 +660,11 @@ header {
 h1.page-title {
   padding-left: 50px;
   margin-bottom: 0;
+  background-color: transparent;
+  border-bottom: none;
 }
 h1.page-title a {
-  color: black !important;
+  color: white;
   font-size: 48px;
   line-height: 48px;
   font-size: 4.8rem;
@@ -711,7 +720,7 @@ aside li a {
   font-size: 2.4rem;
   line-height: 2.4rem;
   text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 aside li .sub-menu {
   margin-left: 20px;
@@ -778,7 +787,7 @@ footer span, footer a, footer p {
   font-size: 2.4rem;
   line-height: 2.4rem;
   text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .home footer span, .home footer a, .home footer p {
   color: white;
@@ -810,40 +819,47 @@ footer span, footer a, footer p {
   color: #2098B7 !important;
 }
 
-.menu-social-menu-container {
+.social-menu {
   margin-top: 50px;
 }
 @media (min-width: 460px) {
-  .menu-social-menu-container {
+  .social-menu {
     width: 47.82609%;
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 940px) {
-  .menu-social-menu-container {
+  .social-menu {
     width: 14.89362%;
     float: right;
     margin-right: 0;
   }
 }
-.menu-social-menu-container ul li {
+.social-menu ul li {
   display: inline-block;
 }
-.menu-social-menu-container ul li:before {
+.social-menu ul li a {
+  font-size: 0px;
+  line-height: 0px;
+  font-size: 0rem;
+  line-height: 0rem;
+  color: white;
+  font-weight: normal;
+  display: inline-block;
   text-decoration: none;
+}
+.social-menu ul li a:before {
   margin-right: 5px;
   font-size: 30px;
   line-height: 30px;
   font-size: 3rem;
   line-height: 3rem;
-  color: white;
 }
-.menu-social-menu-container ul li > a {
-  font-size: 0px;
-  line-height: 0px;
-  font-size: 0rem;
-  line-height: 0rem;
+.social-menu ul li + li {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid white;
 }
 
 .edit-link {
@@ -941,7 +957,7 @@ h5,
 h6 {
   color: black;
   clear: both;
-  font-family: "Oswald", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.3;
   text-transform: uppercase;
 }

@@ -43,7 +43,7 @@
     <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'classy' ); ?></a>
     <h1 class="title page-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo('name'); ?></a></h1>
 
-    <?php wp_nav_menu( array( 'theme_location' => 'social-menu' ) ); ?>
+    <?php social_menu(); ?>
 
   </header><!-- .site-header -->
 

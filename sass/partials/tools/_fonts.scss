@@ -13,9 +13,9 @@
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
-  // font-weight: normal;
+  font-weight: normal;
   font-variant: normal;
-  // text-transform: none;
+  text-transform: none;
   // line-height: 1;
 
   /* Better Font Rendering =========== */
@@ -42,12 +42,15 @@
   content: "\e605";
 }
 .icon-googleplus:before {
+  font-family: 'icomoon';
   content: "\e606";
 }
 .icon-facebook:before {
+  font-family: 'icomoon';
   content: "\e607";
 }
 .icon-twitter:before {
+  font-family: 'icomoon';
   content: "\e608";
 }
 .icon-wordpress:before {

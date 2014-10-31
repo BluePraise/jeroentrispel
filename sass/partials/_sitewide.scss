@@ -14,8 +14,10 @@ header {
   top: 0;
   left: 0;
   background: white;
+  height: 120px;
   .home & {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.6);
+    padding-top: 25px;
   }
 }
 
@@ -57,11 +59,12 @@ header {
 h1.page-title {
   padding-left: 50px;
   margin-bottom: 0;
+  background-color: transparent;
+  border-bottom: none;
   a {
-    color: $black !important;
+    color: rgba(255, 255, 255, 1);
     @include font-size(48,48);
     text-decoration: none;
-    @extend .no-hover-effect;
   }
 }
 
@@ -96,7 +99,7 @@ aside {
       display: block;
       @include font-size(24,24);
       text-transform: uppercase;
-      font-family: $oswald;
+      font-family: $header-font;
     }
     .sub-menu {
       margin-left: 20px;
@@ -149,7 +152,7 @@ footer {
     color: $black;
     @include font-size(24,24);
     text-transform: uppercase;
-    font-family: $oswald;
+    font-family: $header-font;
     .home & {
       color: $white;
     }
@@ -180,7 +183,7 @@ footer {
   }
 }
 
-.menu-social-menu-container {
+.social-menu {
   margin-top: 50px; // Temp fix for adminbar.
   @include at-breakpoint($wide-mobile) {
     @include span-columns(3 omega, 6);
@@ -190,19 +193,42 @@ footer {
   }
   ul li {
     display: inline-block;
-    &:before {
-      text-decoration: none;
-      margin-right: 5px;
-      @include font-size(30, 30);
-      color: $white;
-    }
-    > a {
+    a {
       @include font-size(0,0);
-      // @include hide-text(); // I DO NOT KNOW WHY THIS MIXIN DOES NOT WORK
+      color: $white;
+      font-weight: normal;
+      display: inline-block;
+      text-decoration: none;
+      &:before {
+        margin-right: 5px;
+        @include font-size(30, 30);
+      }
+    }
+    & + li {
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 1px solid $white;
     }
   }
 }
 
+li.twitter  {
+  a {
+    @extend .icon-twitter;
+  }
+}
+
+li.facebook  {
+  a {
+    @extend .icon-facebook;
+  }
+}
+
+li.google  {
+  a {
+    @extend .icon-googleplus;
+  }
+}
 .edit-link {
   display: inline-block;
   .post-edit-link {

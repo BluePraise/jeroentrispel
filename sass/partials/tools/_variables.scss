@@ -36,8 +36,6 @@ $h4-font-size: 1          * $base-font-size;
 $h5-font-size: 0.83333333 * $base-font-size; // 10px
 $h6-font-size: 0.75       * $base-font-size; // 8px
 
-
-
 // The following font family declarations are based on the Microsoft core web
 // fonts which are common fonts available on most computer systems. The DejaVu
 // and Nimbus Sans fonts are commonly available on Linux systems where the MS
@@ -59,6 +57,7 @@ $base_text:       'Source Sans Pro', sans-serif;
 // Project-specific fonts
 // Put any font families here that are specific to your project
 $oswald:          'Oswald', sans-serif;
+$montserrat:      'Montserrat', sans-serif;
 
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
@@ -69,6 +68,7 @@ $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 $font-body:        $base_text;
 $font-monospace:   $courier;
 $form-font-family: $font-monospace;
+$header-font:      $montserrat;
 
 
 // Colors, etc.

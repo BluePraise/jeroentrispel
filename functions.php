@@ -10,10 +10,14 @@ if ( ! isset( $content_width ) )
   $content_width = 960;
 
 function launch_this_trispel_theme() {
-  // remove_filter( 'excerpt_length', 'custom_excerpt_length', 999);
-  // add_filter( 'excerpt_length', 'custom_excerpt_length', 999);
-  // remove_filter( 'excerpt_more', 'new_excerpt_more');
-  // add_filter( 'excerpt_more', 'new_excerpt_more');
+  //============================================
+  // Theme Support
+  //============================================
+    add_theme_support( 'post-formats', array( 'none', 'gallery', 'link', 'image', 'quote', 'video' ) );
+    add_theme_support( 'custom-background' );
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+    add_theme_support( 'menus' );
 }
 
 remove_action( 'wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
@@ -33,12 +37,12 @@ function remove_wp_ver_css_js( $src ) {
         $src = remove_query_arg( 'ver', $src );
     return $src;
 }
-add_filter( 'style_loader_src', 'remove_wp_ver_css_js', 9999 ); // remove WP version from css
-add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 ); // remove Wp version from scripts
-
 function disable_version() {
    return '';
 }
+
+add_filter( 'style_loader_src', 'remove_wp_ver_css_js', 9999 ); // remove WP version from css
+add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 ); // remove Wp version from scripts
 add_filter('the_generator','disable_version');
 
 ///=============================================
@@ -110,9 +114,10 @@ function googleweb_fonts_url() {
    * supported by Oswald, translate this to 'off'. Do not translate into your
    * own language.
    */
-  $oswald = _x( 'on', 'Oswald font: on or off', 'jeroentrispel' );
+  // $oswald = _x( 'on', 'Oswald font: on or off', 'jeroentrispel' );
 
   $lora =  _x( 'on', 'Lora font: on or off', 'jeroentrispel' );
+  $montserrat =  _x( 'on', 'Montserrat font: on or off', 'jeroentrispel' );
 
     if ( 'off' !== $source_sans_pro || 'off' !== $oswald || 'off' !== $lora ) {
       $font_families = array();
@@ -120,8 +125,8 @@ function googleweb_fonts_url() {
     if ( 'off' !== $source_sans_pro )
       $font_families[] = 'Source Sans Pro:300,400,700,300italic,400italic,700italic';
 
-    if ( 'off' !== $oswald )
-      $font_families[] = 'Oswald:400,700,300';
+    if ( 'off' !== $montserrat )
+      $font_families[] = 'Montserrat:400,700';
 
     if ( 'off' !== $lora )
       $font_families[] = 'Lora:400,700,400italic,700italic';
@@ -146,13 +151,6 @@ function jeroentrispel_edit_link() {
     endif;
 }
 
-//============================================
-// Theme Support
-//============================================
-add_theme_support( 'post-formats', array( 'none', 'gallery', 'link', 'image', 'quote', 'video' ) );
-add_theme_support( 'custom-background' );
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
 add_post_type_support( 'work', 'post-formats' );
 $args = array(
@@ -160,15 +158,16 @@ $args = array(
 );
 register_post_type('work', $args);
 
-
-// the main menu
+//=============================================
+// THE MENUS
+//=============================================
 function main_menu(){
   wp_nav_menu(
     array(
       'theme_location'  => 'main-menu',
       'menu'            => 'main-menu',
-      'container'       => false,
-      'container_class' => '',
+      'container'       => 'nav',
+      'container_class' => 'main-menu',
       'container_id'    => '',
       'menu_class'      => 'main-menu',
       'menu_id'         => '',
@@ -181,14 +180,18 @@ function main_menu(){
       'items_wrap'      => '<ul>%3$s</ul>',
       'depth'           => 0,
       'walker'          => ''
-    ),
+    ));
+}
+// the social menu
+function social_menu(){
+  wp_nav_menu(
     array(
       'theme_location'  => 'social-menu',
       'menu'            => '',
-      'container'       => false,
-      'container_class' => '',
+      'container'       => 'nav',
+      'container_class' => 'social-menu',
       'container_id'    => '',
-      'menu_class'      => 'social-menu',
+      'menu_class'      => '',
       'menu_id'         => '',
       'echo'            => true,
       'fallback_cb'     => 'wp_page_menu',
@@ -200,7 +203,7 @@ function main_menu(){
       'depth'           => 0,
       'walker'          => ''
     ));
-  } /* end mayconnect main nav */
+  }
 
 function register_all_menus() {
   register_nav_menus(array( // Using array to specify more menus if needed
