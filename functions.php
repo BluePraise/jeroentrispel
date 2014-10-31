@@ -202,14 +202,14 @@ function main_menu(){
     ));
   } /* end mayconnect main nav */
 
-function register_main_menu() {
+function register_all_menus() {
   register_nav_menus(array( // Using array to specify more menus if needed
     'main-menu' => __('Main Menu', 'jeroentrispel'), // Main Navigation
     'social-menu' => __('Social Menu', 'jeroentrispel'), // Menu for the social icons
     // 'extra-menu' => __('Extra Menu', 'classy') // Extra Navigation if needed (duplicate as many as you need!)
   ));
 }
-add_action( 'init', 'register_main_menu' );
+add_action( 'init', 'register_all_menus' );
 
 
 function main_sidebar() {
