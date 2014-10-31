@@ -180,28 +180,29 @@ footer {
   }
 }
 
-.social {
+.menu-social-menu-container {
+  margin-top: 50px; // Temp fix for adminbar.
   @include at-breakpoint($wide-mobile) {
     @include span-columns(3 omega, 6);
   }
   @include at-breakpoint($desktop) {
-    @include span-columns(3 omega,12);
+    @include span-columns(2 omega,12);
   }
-  span:before {
-    text-decoration: none;
-    margin-right: 5px;
-    @include font-size(48, 48);
-  }
-  .facebook {
-    color: $color-facebook;
-  }
-  .google {
-    color: $color-google;
-  }
-  .twitter {
-    color: $color-twitter;
+  ul li {
+    display: inline-block;
+    &:before {
+      text-decoration: none;
+      margin-right: 5px;
+      @include font-size(30, 30);
+      color: $white;
+    }
+    > a {
+      @include font-size(0,0);
+      // @include hide-text(); // I DO NOT KNOW WHY THIS MIXIN DOES NOT WORK
+    }
   }
 }
+
 .edit-link {
   display: inline-block;
   .post-edit-link {

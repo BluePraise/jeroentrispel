@@ -810,36 +810,40 @@ footer span, footer a, footer p {
   color: #2098B7 !important;
 }
 
+.menu-social-menu-container {
+  margin-top: 50px;
+}
 @media (min-width: 460px) {
-  .social {
+  .menu-social-menu-container {
     width: 47.82609%;
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 940px) {
-  .social {
-    width: 23.40426%;
+  .menu-social-menu-container {
+    width: 14.89362%;
     float: right;
     margin-right: 0;
   }
 }
-.social span:before {
+.menu-social-menu-container ul li {
+  display: inline-block;
+}
+.menu-social-menu-container ul li:before {
   text-decoration: none;
   margin-right: 5px;
-  font-size: 48px;
-  line-height: 48px;
-  font-size: 4.8rem;
-  line-height: 4.8rem;
+  font-size: 30px;
+  line-height: 30px;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: white;
 }
-.social .facebook {
-  color: #3b5998;
-}
-.social .google {
-  color: #d6492c;
-}
-.social .twitter {
-  color: #33ccff;
+.menu-social-menu-container ul li > a {
+  font-size: 0px;
+  line-height: 0px;
+  font-size: 0rem;
+  line-height: 0rem;
 }
 
 .edit-link {

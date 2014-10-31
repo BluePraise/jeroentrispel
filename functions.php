@@ -146,7 +146,9 @@ function jeroentrispel_edit_link() {
     endif;
 }
 
-
+//============================================
+// Theme Support
+//============================================
 add_theme_support( 'post-formats', array( 'none', 'gallery', 'link', 'image', 'quote', 'video' ) );
 add_theme_support( 'custom-background' );
 add_theme_support( 'post-thumbnails' );
@@ -169,6 +171,24 @@ function main_menu(){
       'container_class' => '',
       'container_id'    => '',
       'menu_class'      => 'main-menu',
+      'menu_id'         => '',
+      'echo'            => true,
+      'fallback_cb'     => 'wp_page_menu',
+      'before'          => '',
+      'after'           => '',
+      'link_before'     => '',
+      'link_after'      => '',
+      'items_wrap'      => '<ul>%3$s</ul>',
+      'depth'           => 0,
+      'walker'          => ''
+    ),
+    array(
+      'theme_location'  => 'social-menu',
+      'menu'            => '',
+      'container'       => false,
+      'container_class' => '',
+      'container_id'    => '',
+      'menu_class'      => 'social-menu',
       'menu_id'         => '',
       'echo'            => true,
       'fallback_cb'     => 'wp_page_menu',
