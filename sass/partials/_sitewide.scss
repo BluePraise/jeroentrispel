@@ -10,11 +10,15 @@ body {
 
 header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   background: white;
-  height: 120px;
+  height: 300px;
+  margin: 0;
+  @include at-breakpoint($desktop) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 120px;
+  }
   .home & {
     background: rgba(0, 0, 0, 0.6);
     padding-top: 25px;
@@ -57,10 +61,13 @@ header {
 }
 
 h1.page-title {
-  padding-left: 50px;
   margin-bottom: 0;
   background-color: transparent;
   border-bottom: none;
+  text-align: center;
+  @include at-breakpoint($desktop) {
+    padding-left: 50px;
+  }
   a {
     color: rgba(255, 255, 255, 1);
     @include font-size(48,48);
@@ -184,15 +191,19 @@ footer {
 }
 
 .social-menu {
-  margin-top: 50px; // Temp fix for adminbar.
+  margin-top: 30px; // Temp fix for adminbar.
+  @include span-columns(4,4);
+  text-align: center;
   @include at-breakpoint($wide-mobile) {
     @include span-columns(3 omega, 6);
   }
   @include at-breakpoint($desktop) {
+    margin-top: 50px; // Temp fix for adminbar.
     @include span-columns(2 omega,12);
   }
   ul li {
     display: inline-block;
+    text-align: center;
     a {
       @include font-size(0,0);
       color: $white;
@@ -202,6 +213,11 @@ footer {
       &:before {
         margin-right: 5px;
         @include font-size(30, 30);
+      }
+      &:hover {
+        -webkit-transition: background, 1000ms ease;
+        transition:         background, 1000ms ease;
+        background: transparent;
       }
     }
     & + li {
@@ -215,18 +231,27 @@ footer {
 li.twitter  {
   a {
     @extend .icon-twitter;
+    &:hover {
+      color: $color-twitter;
+    }
   }
 }
 
 li.facebook  {
   a {
     @extend .icon-facebook;
+    &:hover {
+      color: $color-facebook;
+    }
   }
 }
 
 li.google  {
   a {
     @extend .icon-googleplus;
+    &:hover {
+      color: $color-google;
+    }
   }
 }
 .edit-link {

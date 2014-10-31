@@ -612,11 +612,17 @@ dd {
 
 header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   background: white;
-  height: 120px;
+  height: 300px;
+  margin: 0;
+}
+@media (min-width: 940px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 120px;
+  }
 }
 .home header {
   background: rgba(0, 0, 0, 0.6);
@@ -658,10 +664,15 @@ header {
 }
 
 h1.page-title {
-  padding-left: 50px;
   margin-bottom: 0;
   background-color: transparent;
   border-bottom: none;
+  text-align: center;
+}
+@media (min-width: 940px) {
+  h1.page-title {
+    padding-left: 50px;
+  }
 }
 h1.page-title a {
   color: white;
@@ -820,7 +831,12 @@ footer span, footer a, footer p {
 }
 
 .social-menu {
-  margin-top: 50px;
+  margin-top: 30px;
+  width: 100%;
+  float: left;
+  margin-right: 6.66667%;
+  display: inline;
+  text-align: center;
 }
 @media (min-width: 460px) {
   .social-menu {
@@ -831,6 +847,7 @@ footer span, footer a, footer p {
 }
 @media (min-width: 940px) {
   .social-menu {
+    margin-top: 50px;
     width: 14.89362%;
     float: right;
     margin-right: 0;
@@ -838,6 +855,7 @@ footer span, footer a, footer p {
 }
 .social-menu ul li {
   display: inline-block;
+  text-align: center;
 }
 .social-menu ul li a {
   font-size: 0px;
@@ -856,10 +874,27 @@ footer span, footer a, footer p {
   font-size: 3rem;
   line-height: 3rem;
 }
+.social-menu ul li a:hover {
+  -webkit-transition: background, 1000ms ease;
+  transition: background, 1000ms ease;
+  background: transparent;
+}
 .social-menu ul li + li {
   margin-left: 20px;
   padding-left: 20px;
   border-left: 1px solid white;
+}
+
+li.twitter a:hover {
+  color: #33ccff;
+}
+
+li.facebook a:hover {
+  color: #3b5998;
+}
+
+li.google a:hover {
+  color: #d6492c;
 }
 
 .edit-link {
