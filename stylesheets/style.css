@@ -615,6 +615,8 @@ header {
   background: white;
   height: 300px;
   margin: 0;
+  border-radius: 0px 0 6px 6px;
+  border: 2px #F5F5F5 solid;
 }
 @media (min-width: 940px) {
   header {
@@ -622,6 +624,7 @@ header {
     top: 0;
     left: 0;
     height: 120px;
+    border: none;
   }
 }
 .home header {
@@ -1550,46 +1553,6 @@ img.wp-smiley,
 .wp-caption.alignleft + ul,
 .wp-caption.alignleft + ol {
   list-style-position: inside;
-}
-
-@media (min-width: 460px) {
-  section.portfolio {
-    width: 65.21739%;
-    float: left;
-    margin-right: 4.34783%;
-  }
-}
-@media (min-width: 780px) {
-  section.portfolio {
-    width: 22.58065%;
-    float: left;
-    margin-right: 3.22581%;
-  }
-}
-@media (min-width: 940px) {
-  section.portfolio {
-    width: 31.42857%;
-    float: left;
-    margin-right: 2.85714%;
-  }
-  section.portfolio:nth-child(3) {
-    float: right;
-    margin-right: 0;
-  }
-}
-
-ul.portfolio-list {
-  width: 100%;
-  float: left;
-  display: none;
-}
-
-.portfolio-item {
-  margin-bottom: 10px;
-}
-
-.portfolio-item-title {
-  display: inline-block;
 }
 
 .cb-slideshow,

@@ -13,11 +13,14 @@ header {
   background: white;
   height: 300px;
   margin: 0;
+  border-radius: 0px 0 6px 6px;
+  border: 2px #F5F5F5 solid;
   @include at-breakpoint($desktop) {
     position: fixed;
     top: 0;
     left: 0;
     height: 120px;
+    border: none;
   }
   .home & {
     background: rgba(0, 0, 0, 0.6);
