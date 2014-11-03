@@ -35,16 +35,11 @@ header {
     @include susy-grid-background;
   }
   @include at-breakpoint($wide-mobile) {
-    margin-top: 110px;
     @if ($show-grid-backgrounds) {
       @include susy-grid-background;
     }
-    .category-projects & {
-      margin-top: 70px;
-    }
   }
   @include at-breakpoint($tablet) {
-    margin-top: 80px;
     @if ($show-grid-backgrounds) {
       @include susy-grid-background;
     }
@@ -100,14 +95,19 @@ aside {
   }
   @include at-breakpoint($desktop) {
     @include span-columns(2,12);
-    margin-top: 20px;
+    margin-top: 150px;
+    margin-left: 40px;
   }
   li {
     margin-bottom: 5px;
     display: block;
+    text-align: center;
+    @include at-breakpoint($tablet) {
+      text-align: left;
+    }
     a {
-      display: block;
-      @include font-size(24,24);
+      display: inline-block;
+      @include font-size(24,48);
       text-transform: uppercase;
       font-family: $header-font;
     }
