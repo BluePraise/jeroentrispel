@@ -436,7 +436,8 @@ input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -455,7 +456,6 @@ input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -509,7 +509,8 @@ p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
   -moz-hyphens: auto;
-  hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
 }
 
 b, strong, .strong {
@@ -613,10 +614,15 @@ dd {
 header {
   width: 100%;
   background: white;
-  height: 300px;
   margin: 0;
   border-radius: 0px 0 6px 6px;
   border: 2px #F5F5F5 solid;
+  height: 18em;
+}
+@media (min-width: 460px) {
+  header {
+    height: 17em;
+  }
 }
 @media (min-width: 940px) {
   header {
@@ -655,6 +661,7 @@ header {
 
 h1.page-title {
   margin-bottom: 0;
+  margin-top: 10px;
   background-color: transparent;
   border-bottom: none;
   text-align: center;
@@ -662,6 +669,7 @@ h1.page-title {
 @media (min-width: 940px) {
   h1.page-title {
     padding-left: 50px;
+    margin-top: 0px;
   }
 }
 h1.page-title a {
@@ -687,13 +695,6 @@ h2.page-title {
 aside {
   clear: left;
   position: relative;
-}
-@media (min-width: 460px) {
-  aside {
-    width: 30.43478%;
-    float: left;
-    margin-right: 4.34783%;
-  }
 }
 @media (min-width: 780px) {
   aside {
@@ -770,40 +771,28 @@ aside li .sub-menu {
 }
 
 footer {
-  clear: both;
   width: 100%;
-  margin-top: 50px;
-  padding-top: 30px;
-  border-top: 4px solid black;
+  float: left;
+  border-top: 1px solid white;
 }
 @media (min-width: 780px) {
   footer {
+    padding-top: 30px;
+    margin-top: 50px;
+  }
+  .home footer {
     position: fixed;
     bottom: 0;
     left: 0;
   }
 }
-.home footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
 footer span, footer a, footer p {
   color: black;
-  font-size: 24px;
-  line-height: 24px;
-  font-size: 2.4rem;
-  line-height: 2.4rem;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
 }
 .home footer span, .home footer a, .home footer p {
   color: white;
-}
-
-.footer-info {
-  margin-left: 10px;
-  margin-bottom: 30px;
 }
 
 .copyright {
@@ -819,6 +808,10 @@ footer span, footer a, footer p {
 }
 .copyright span {
   display: block;
+  font-size: 14px;
+  line-height: 24px;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
 }
 .copyright .magalielinda {
   margin-top: 15px;
@@ -828,7 +821,7 @@ footer span, footer a, footer p {
 }
 
 .social-menu {
-  margin-top: 30px;
+  margin-top: 40px;
   width: 100%;
   float: left;
   margin-right: 6.66667%;
@@ -837,17 +830,22 @@ footer span, footer a, footer p {
 }
 @media (min-width: 460px) {
   .social-menu {
-    width: 47.82609%;
+    margin-top: 30px;
+  }
+}
+@media (min-width: 780px) {
+  .social-menu {
+    width: 28.20513%;
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 940px) {
   .social-menu {
-    margin-top: 50px;
     width: 14.89362%;
     float: right;
     margin-right: 0;
+    margin-top: 50px;
   }
 }
 .social-menu ul li {
@@ -909,7 +907,6 @@ li.google a:hover {
 }
 
 * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -1354,6 +1351,11 @@ hr {
   margin: 0 0 24px;
 }
 
+::-moz-selection {
+  background: yellow;
+  /* Safari */
+}
+
 ::selection {
   background: yellow;
   /* Safari */
@@ -1578,8 +1580,6 @@ img.wp-smiley,
   z-index: 0;
   -webkit-backface-visibility: hidden;
   -webkit-animation: imageAnimation 36s linear infinite 0s;
-  -moz-animation: imageAnimation 36s linear infinite 0s;
-  -o-animation: imageAnimation 36s linear infinite 0s;
   -ms-animation: imageAnimation 36s linear infinite 0s;
   animation: imageAnimation 36s linear infinite 0s;
 }
@@ -1594,8 +1594,6 @@ img.wp-smiley,
   opacity: 0;
   color: #fff;
   -webkit-animation: titleAnimation 36s linear infinite 0s;
-  -moz-animation: titleAnimation 36s linear infinite 0s;
-  -o-animation: titleAnimation 36s linear infinite 0s;
   -ms-animation: titleAnimation 36s linear infinite 0s;
   animation: titleAnimation 36s linear infinite 0s;
 }
@@ -1613,8 +1611,6 @@ img.wp-smiley,
 .cb-slideshow li:nth-child(2) span {
   background-image: url(../images/2.jpg);
   -webkit-animation-delay: 6s;
-  -moz-animation-delay: 6s;
-  -o-animation-delay: 6s;
   -ms-animation-delay: 6s;
   animation-delay: 6s;
 }
@@ -1622,8 +1618,6 @@ img.wp-smiley,
 .cb-slideshow li:nth-child(3) span {
   background-image: url(../images/3.jpg);
   -webkit-animation-delay: 12s;
-  -moz-animation-delay: 12s;
-  -o-animation-delay: 12s;
   -ms-animation-delay: 12s;
   animation-delay: 12s;
 }
@@ -1631,8 +1625,6 @@ img.wp-smiley,
 .cb-slideshow li:nth-child(4) span {
   background-image: url(../images/4.jpg);
   -webkit-animation-delay: 18s;
-  -moz-animation-delay: 18s;
-  -o-animation-delay: 18s;
   -ms-animation-delay: 18s;
   animation-delay: 18s;
 }
@@ -1640,8 +1632,6 @@ img.wp-smiley,
 .cb-slideshow li:nth-child(5) span {
   background-image: url(../images/5.jpg);
   -webkit-animation-delay: 24s;
-  -moz-animation-delay: 24s;
-  -o-animation-delay: 24s;
   -ms-animation-delay: 24s;
   animation-delay: 24s;
 }
@@ -1649,48 +1639,36 @@ img.wp-smiley,
 .cb-slideshow li:nth-child(6) span {
   background-image: url(../images/6.jpg);
   -webkit-animation-delay: 30s;
-  -moz-animation-delay: 30s;
-  -o-animation-delay: 30s;
   -ms-animation-delay: 30s;
   animation-delay: 30s;
 }
 
 .cb-slideshow li:nth-child(2) div {
   -webkit-animation-delay: 6s;
-  -moz-animation-delay: 6s;
-  -o-animation-delay: 6s;
   -ms-animation-delay: 6s;
   animation-delay: 6s;
 }
 
 .cb-slideshow li:nth-child(3) div {
   -webkit-animation-delay: 12s;
-  -moz-animation-delay: 12s;
-  -o-animation-delay: 12s;
   -ms-animation-delay: 12s;
   animation-delay: 12s;
 }
 
 .cb-slideshow li:nth-child(4) div {
   -webkit-animation-delay: 18s;
-  -moz-animation-delay: 18s;
-  -o-animation-delay: 18s;
   -ms-animation-delay: 18s;
   animation-delay: 18s;
 }
 
 .cb-slideshow li:nth-child(5) div {
   -webkit-animation-delay: 24s;
-  -moz-animation-delay: 24s;
-  -o-animation-delay: 24s;
   -ms-animation-delay: 24s;
   animation-delay: 24s;
 }
 
 .cb-slideshow li:nth-child(6) div {
   -webkit-animation-delay: 30s;
-  -moz-animation-delay: 30s;
-  -o-animation-delay: 30s;
   -ms-animation-delay: 30s;
   animation-delay: 30s;
 }
@@ -1705,54 +1683,6 @@ img.wp-smiley,
   8% {
     opacity: 1;
     -webkit-animation-timing-function: ease-out;
-  }
-
-  17% {
-    opacity: 1;
-  }
-
-  25% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@-moz-keyframes imageAnimation {
-  0% {
-    opacity: 0;
-    -moz-animation-timing-function: ease-in;
-  }
-
-  8% {
-    opacity: 1;
-    -moz-animation-timing-function: ease-out;
-  }
-
-  17% {
-    opacity: 1;
-  }
-
-  25% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@-o-keyframes imageAnimation {
-  0% {
-    opacity: 0;
-    -o-animation-timing-function: ease-in;
-  }
-
-  8% {
-    opacity: 1;
-    -o-animation-timing-function: ease-out;
   }
 
   17% {
@@ -1795,12 +1725,14 @@ img.wp-smiley,
 @keyframes imageAnimation {
   0% {
     opacity: 0;
-    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
   }
 
   8% {
     opacity: 1;
-    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
   }
 
   17% {
@@ -1818,50 +1750,6 @@ img.wp-smiley,
 
 /* Animation for the title */
 @-webkit-keyframes titleAnimation {
-  0% {
-    opacity: 0;
-  }
-
-  8% {
-    opacity: 1;
-  }
-
-  17% {
-    opacity: 1;
-  }
-
-  19% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@-moz-keyframes titleAnimation {
-  0% {
-    opacity: 0;
-  }
-
-  8% {
-    opacity: 1;
-  }
-
-  17% {
-    opacity: 1;
-  }
-
-  19% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@-o-keyframes titleAnimation {
   0% {
     opacity: 0;
   }
@@ -2050,7 +1938,6 @@ img.wp-smiley,
 .cbp-spmenu,
 .cbp-spmenu-push {
   -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
