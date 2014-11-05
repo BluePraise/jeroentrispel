@@ -20,7 +20,8 @@ html {
   font-size: 62.5%;
   overflow-y: scroll;
   font-family: $font-body;
-  // color: $mainColor;
+  width: 100%;
+  height: 100%;
 }
 
 html,
@@ -33,7 +34,8 @@ textarea {
 
 body {
   @include font-size();
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 body.admin-bar
