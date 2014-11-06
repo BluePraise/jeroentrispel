@@ -8,4 +8,11 @@
   header {
     margin: auto;
   }
+  nav > ul {
+    display: flex;
+    flex-flow: row;
+  }
+  .social-menu ul { justify-content: center; }
+  .main-menu ul { justify-content: space-around; }
 }
+

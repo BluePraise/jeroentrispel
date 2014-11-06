@@ -23,7 +23,7 @@
 }
 
 header {
-  margin: 0;
+  // margin: 0;
   // background: white;
   // border-radius: 0px 0 6px 6px;
   // border: 2px #F5F5F5 solid;
@@ -70,7 +70,7 @@ h2.page-title {
 }
 
 aside {
-  clear: left;
+  /*clear: left;
   position: relative;
   @include at-breakpoint($wide-mobile) {
     // @include span-columns(2,6);
@@ -103,7 +103,7 @@ aside {
         color: $white;
       }
     }
-  }
+  }*/
 }
 
 main.site-main {
@@ -173,42 +173,42 @@ footer {
   }
 }
 
-.social-menu {
+/*.social-menu {
   text-align: center;
   @include at-breakpoint($wide-mobile) {
-    margin-top: 30px; // Temp fix for adminbar.
+    // margin-top: 30px; // Temp fix for adminbar.
   }
   @include at-breakpoint($tablet) {
     // @include span-columns(3 omega, 10);
   }
   @include at-breakpoint($desktop) {
-    @include span-columns(2 omega,12);
-    margin-top: 50px; // Temp fix for adminbar.
+    // @include span-columns(2 omega,12);
+    // margin-top: 50px; // Temp fix for adminbar.
   }
-  ul li {
-    display: inline-block;
-    text-align: center;
-    a {
-      @include font-size(0,0);
-      color: $white;
-      font-weight: normal;
-      display: inline-block;
-      text-decoration: none;
-      &:before {
-        margin-right: 5px;
-        @include font-size(30, 30);
-      }
-      &:hover {
-        -webkit-transition: background, 1000ms ease;
-        transition:         background, 1000ms ease;
-        background: transparent;
-      }
+
+}*/
+
+.social-menu ul li {
+  a {
+    @include font-size(0,0);
+    color: $white;
+    font-weight: normal;
+    // display: inline-block;
+    text-decoration: none;
+    &:before {
+      margin-right: 5px;
+      @include font-size(30, 30);
     }
-    & + li {
-      margin-left: 20px;
-      padding-left: 20px;
-      border-left: 1px solid $white;
+    &:hover {
+      -webkit-transition: background, 1000ms ease;
+      transition:         background, 1000ms ease;
+      background: transparent;
     }
+  }
+  & + li {
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid $white;
   }
 }
 

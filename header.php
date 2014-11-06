@@ -45,11 +45,14 @@
       <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'trispel' ); ?></a>
       <h1 class="title page-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo('name'); ?></a></h1>
 
-      <?php social_menu(); ?>
+      <?php
+        social_menu();
+        if( is_front_page() ): main_menu(); ?>
+      </header><!-- .site-header -->
+      <?php else : get_sidebar();
+       endif;
+      ?>
 
-    </header><!-- .site-header -->
-
-      <?php get_sidebar(); ?>
      <main class="site-main" role="main">
 
 

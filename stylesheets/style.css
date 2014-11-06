@@ -28,7 +28,8 @@ Tags: responsive, blogging, clean, white, mobile
   color: black;
   background-color: transparent;
   outline: 0;
-  transition: none;
+  -webkit-transition: none;
+          transition: none;
 }
 
 @font-face {
@@ -96,40 +97,17 @@ Tags: responsive, blogging, clean, white, mobile
 
 #page {
   position: relative;
+  height: 100%;
   *zoom: 1;
   padding-left: 1em;
   padding-right: 1em;
   margin-left: auto;
   margin-right: auto;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-content: center;
-      -ms-flex-line-pack: center;
-          align-content: center;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
 }
 #page:after {
   content: "";
   display: table;
   clear: both;
-}
-
-header {
-  margin: 0;
-}
-@media (min-width: 940px) {
-  header {
-    -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
 }
 
 .title {
@@ -166,50 +144,40 @@ h2.page-title {
 }
 
 aside {
-  clear: left;
+  /*clear: left;
   position: relative;
-}
-@media (min-width: 780px) {
-  aside {
-    width: 17.94872%;
-    float: left;
-    margin-right: 2.5641%;
+  @include at-breakpoint($wide-mobile) {
+    // @include span-columns(2,6);
   }
-}
-@media (min-width: 940px) {
-  aside {
-    width: 14.89362%;
-    float: left;
-    margin-right: 2.12766%;
+  @include at-breakpoint($tablet) {
+    @include span-columns(2,10);
+  }
+  @include at-breakpoint($desktop) {
+    @include span-columns(2,12);
     margin-top: 150px;
     margin-left: 40px;
   }
-}
-aside li {
-  margin-bottom: 5px;
-  display: block;
-  text-align: center;
-}
-@media (min-width: 780px) {
-  aside li {
-    text-align: left;
-  }
-}
-aside li a {
-  display: inline-block;
-  font-size: 24px;
-  line-height: 48px;
-  font-size: 2.4rem;
-  line-height: 4.8rem;
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
-}
-aside li .sub-menu {
-  margin-left: 20px;
-  margin-top: 5px;
-}
-.home aside li .sub-menu {
-  color: white;
+  li {
+    margin-bottom: 5px;
+    display: block;
+    text-align: center;
+    @include at-breakpoint($tablet) {
+      text-align: left;
+    }
+    a {
+      display: inline-block;
+      @include font-size(24,48);
+      text-transform: uppercase;
+      font-family: $header-font;
+    }
+    .sub-menu {
+      margin-left: 20px;
+      margin-top: 5px;
+      .home & {
+        color: $white;
+      }
+    }
+  }*/
 }
 
 @media (min-width: 460px) {
@@ -293,26 +261,20 @@ footer span, footer a, footer p {
   color: #2098B7 !important;
 }
 
-.social-menu {
+/*.social-menu {
   text-align: center;
-}
-@media (min-width: 460px) {
-  .social-menu {
-    margin-top: 30px;
+  @include at-breakpoint($wide-mobile) {
+    // margin-top: 30px; // Temp fix for adminbar.
   }
-}
-@media (min-width: 940px) {
-  .social-menu {
-    width: 14.89362%;
-    float: right;
-    margin-right: 0;
-    margin-top: 50px;
+  @include at-breakpoint($tablet) {
+    // @include span-columns(3 omega, 10);
   }
-}
-.social-menu ul li {
-  display: inline-block;
-  text-align: center;
-}
+  @include at-breakpoint($desktop) {
+    // @include span-columns(2 omega,12);
+    // margin-top: 50px; // Temp fix for adminbar.
+  }
+
+}*/
 .social-menu ul li a {
   font-size: 0px;
   line-height: 0px;
@@ -320,7 +282,6 @@ footer span, footer a, footer p {
   line-height: 0rem;
   color: white;
   font-weight: normal;
-  display: inline-block;
   text-decoration: none;
 }
 .social-menu ul li a:before {
@@ -331,7 +292,8 @@ footer span, footer a, footer p {
   line-height: 3rem;
 }
 .social-menu ul li a:hover {
-  transition: background, 1000ms ease;
+  -webkit-transition: background, 1000ms ease;
+          transition: background, 1000ms ease;
   background: transparent;
 }
 .social-menu ul li + li {
@@ -367,7 +329,8 @@ li.google a:hover {
 }
 
 * {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
 }
 
 html {
@@ -431,7 +394,8 @@ a:hover {
   color: white;
   background-color: black;
   outline: 0;
-  transition: width 400ms ease, background 400ms ease;
+  -webkit-transition: width 400ms ease, background 400ms ease;
+          transition: width 400ms ease, background 400ms ease;
 }
 .home a:active, .home
 a:hover {
@@ -1012,6 +976,42 @@ img.wp-smiley,
   list-style-position: inside;
 }
 
+.home #page {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      -webkit-align-content: center;
+          align-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.home header {
+  margin: auto;
+}
+.home nav > ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+.home .social-menu ul {
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.home .main-menu ul {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
 .cb-slideshow,
 .cb-slideshow:after {
   position: fixed;
@@ -1396,7 +1396,8 @@ img.wp-smiley,
 /* Transitions */
 .cbp-spmenu,
 .cbp-spmenu-push {
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
 }
 
 /* Example media queries */
