@@ -105,24 +105,18 @@ function googleweb_fonts_url() {
   $fonts_url = '';
 
   /* Translators: If there are characters in your language that are not
-   * supported by Source Sans Pro, translate this to 'off'. Do not translate
-   * into your own language.
-   */
-  $source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'jeroentrispe;' );
-
-  /* Translators: If there are characters in your language that are not
    * supported by Oswald, translate this to 'off'. Do not translate into your
    * own language.
    */
   // $oswald = _x( 'on', 'Oswald font: on or off', 'jeroentrispel' );
-
+  $cutive_mono = _x( 'on', 'Cutive Mono font: on or off', 'jeroentrispe;' );
   $lora =  _x( 'on', 'Lora font: on or off', 'jeroentrispel' );
   $montserrat =  _x( 'on', 'Montserrat font: on or off', 'jeroentrispel' );
 
-    if ( 'off' !== $source_sans_pro || 'off' !== $oswald || 'off' !== $lora ) {
+    if ( 'off' !== $cutive_mono || 'off' !== $oswald || 'off' !== $lora ) {
       $font_families = array();
 
-    if ( 'off' !== $source_sans_pro )
+    if ( 'off' !== $cutive_mono )
       $font_families[] = 'Source Sans Pro:300,400,700,300italic,400italic,700italic';
 
     if ( 'off' !== $montserrat )

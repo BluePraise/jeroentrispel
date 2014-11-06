@@ -28,8 +28,7 @@ Tags: responsive, blogging, clean, white, mobile
   color: black;
   background-color: transparent;
   outline: 0;
-  -webkit-transition: none;
-          transition: none;
+  transition: none;
 }
 
 @font-face {
@@ -292,8 +291,7 @@ footer span, footer a, footer p {
   line-height: 3rem;
 }
 .social-menu ul li a:hover {
-  -webkit-transition: background, 1000ms ease;
-          transition: background, 1000ms ease;
+  transition: background, 1000ms ease;
   background: transparent;
 }
 .social-menu ul li + li {
@@ -329,8 +327,7 @@ li.google a:hover {
 }
 
 * {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -338,7 +335,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font-size: 62.5%;
   overflow-y: scroll;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Cutive Mono", monospace, sans-serif;
   width: 100%;
   height: 100%;
 }
@@ -394,8 +391,7 @@ a:hover {
   color: white;
   background-color: black;
   outline: 0;
-  -webkit-transition: width 400ms ease, background 400ms ease;
-          transition: width 400ms ease, background 400ms ease;
+  transition: width 400ms ease, background 400ms ease;
 }
 .home a:active, .home
 a:hover {
@@ -983,8 +979,8 @@ img.wp-smiley,
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      -webkit-align-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
           align-content: center;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
@@ -1396,8 +1392,7 @@ img.wp-smiley,
 /* Transitions */
 .cbp-spmenu,
 .cbp-spmenu-push {
-  -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* Example media queries */
