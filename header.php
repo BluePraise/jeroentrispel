@@ -14,7 +14,6 @@
 
   <title><?php wp_title( '|', true, 'right' ); bloginfo('name');?></title>
   <meta name="description" content="<?php bloginfo('description'); ?>" />
-  <meta name="Copyright" content="Copyright &copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?>. All Rights Reserved.">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
   <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -30,12 +29,12 @@
 <body <?php body_class(); ?>>
   <?php if ( is_front_page() ) : ?>
     <ul class="cb-slideshow">
-      <li><span>Image 01</span><div></div></li>
-      <li><span>Image 02</span><div></div></li>
-      <li><span>Image 03</span><div></div></li>
-      <li><span>Image 04</span><div></div></li>
-      <li><span>Image 05</span><div></div></li>
-      <li><span>Image 06</span><div></div></li>
+      <li><figure><span>Image 01</span></figure></li>
+      <li><figure><span>Image 02</span></figure></li>
+      <li><figure><span>Image 03</span></figure></li>
+      <li><figure><span>Image 04</span></figure></li>
+      <li><figure><span>Image 05</span></figure></li>
+      <li><figure><span>Image 06</span></figure></li>
     </ul>
   <?php endif ?>
     <div id="page" class="hfeed">
@@ -43,16 +42,14 @@
     <header role="banner">
 
       <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'trispel' ); ?></a>
-      <h1 class="title page-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo('name'); ?></a></h1>
+      <h1 class="title page-title <?php if( is_front_page() ):?>front-page-title<?php endif;?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo('name'); ?></a></h1>
 
       <?php
         social_menu();
-        if( is_front_page() ): main_menu(); ?>
-      </header><!-- .site-header -->
-      <?php else : get_sidebar();
-       endif;
+        main_menu(); 
       ?>
-
+      </header><!-- .site-header -->
+      
      <main class="site-main" role="main">
 
 

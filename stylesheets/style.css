@@ -24,10 +24,11 @@ Tags: responsive, blogging, clean, white, mobile
   overflow: hidden;
 }
 
-.no-hover-effect:hover, footer a:hover, .edit-link .post-edit-link:hover {
+.no-hover-effect:hover, .edit-link .post-edit-link:hover, footer a:hover {
   color: black;
   background-color: transparent;
   outline: 0;
+  -webkit-transition: none;
   transition: none;
 }
 
@@ -97,16 +98,12 @@ Tags: responsive, blogging, clean, white, mobile
 #page {
   position: relative;
   height: 100%;
-  *zoom: 1;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-left: auto;
-  margin-right: auto;
 }
-#page:after {
-  content: "";
-  display: table;
-  clear: both;
+.home #page {
+  display: flex;
+}
+.home #page header {
+  margin: auto;
 }
 
 .title {
@@ -121,14 +118,12 @@ h1.page-title {
   border-bottom: none;
   text-align: center;
 }
-@media (min-width: 940px) {
-  h1.page-title {
-    text-align: left;
-  }
-}
 h1.page-title a {
-  color: white;
   text-decoration: none;
+  font-size: 22px;
+  line-height: 22px;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
 }
 
 h2.page-title {
@@ -140,6 +135,75 @@ h2.page-title {
 .home h2.page-title {
   color: white;
   border-bottom: 4px solid white;
+}
+
+nav > ul {
+  display: flex;
+  flex-flow: row;
+  margin-top: 20px;
+}
+
+.social-menu ul {
+  justify-content: center;
+}
+
+.main-menu ul {
+  justify-content: space-around;
+}
+
+.social-menu ul li a {
+  font-size: 0px;
+  line-height: 0px;
+  font-size: 0rem;
+  line-height: 0rem;
+  font-weight: normal;
+  text-decoration: none;
+}
+.home .social-menu ul li a {
+  color: white;
+}
+.social-menu ul li a:before {
+  margin-right: 5px;
+  font-size: 30px;
+  line-height: 30px;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.social-menu ul li a:hover {
+  -webkit-transition: background, 1000ms ease;
+  transition: background, 1000ms ease;
+  background: transparent;
+}
+.social-menu ul li + li {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid white;
+}
+
+li.twitter a:hover {
+  color: #33ccff;
+}
+
+li.facebook a:hover {
+  color: #3b5998;
+}
+
+li.google a:hover {
+  color: #d6492c;
+}
+
+.edit-link {
+  display: inline-block;
+}
+.edit-link .post-edit-link:visited {
+  color: black;
+}
+.edit-link:before {
+  font-family: 'icomoon';
+  display: inline-block;
+  content: "\e601";
+  margin-right: 10px;
+  color: black;
 }
 
 aside {
@@ -179,51 +243,31 @@ aside {
   }*/
 }
 
-@media (min-width: 460px) {
-  main.site-main {
-    width: 65.21739%;
-    float: right;
-    margin-right: 0;
-  }
-}
-@media (min-width: 780px) {
-  main.site-main {
-    width: 79.48718%;
-    float: right;
-    margin-right: 0;
-  }
-}
-@media (min-width: 940px) {
-  main.site-main {
-    width: 57.44681%;
-    float: left;
-    margin-right: 2.12766%;
-    padding: 1em;
-  }
+body:not(.home) main {
+  flex: 1;
+  padding: 1em;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 }
 
 .content {
   background-color: rgba(255, 255, 255, 0.5);
-  font-family: 'Lora', serif;
   color: black;
 }
 
 footer {
   width: 100%;
   float: left;
-  border-top: 1px solid white;
-}
-@media (min-width: 780px) {
-  footer {
-    padding-top: 30px;
-    margin-top: 50px;
-    padding-left: 50px;
-  }
+  border-top: 1px solid black;
+  padding: 1em;
 }
 .home footer {
   position: fixed;
   bottom: 0;
   left: 0;
+  border-top: 1px solid white;
 }
 footer span, footer a, footer p {
   color: black;
@@ -251,7 +295,6 @@ footer span, footer a, footer p {
   line-height: 24px;
   font-size: 1.4rem;
   line-height: 2.4rem;
-  text-align: center;
 }
 .copyright .magalielinda {
   margin-top: 15px;
@@ -260,73 +303,9 @@ footer span, footer a, footer p {
   color: #2098B7 !important;
 }
 
-/*.social-menu {
-  text-align: center;
-  @include at-breakpoint($wide-mobile) {
-    // margin-top: 30px; // Temp fix for adminbar.
-  }
-  @include at-breakpoint($tablet) {
-    // @include span-columns(3 omega, 10);
-  }
-  @include at-breakpoint($desktop) {
-    // @include span-columns(2 omega,12);
-    // margin-top: 50px; // Temp fix for adminbar.
-  }
-
-}*/
-.social-menu ul li a {
-  font-size: 0px;
-  line-height: 0px;
-  font-size: 0rem;
-  line-height: 0rem;
-  color: white;
-  font-weight: normal;
-  text-decoration: none;
-}
-.social-menu ul li a:before {
-  margin-right: 5px;
-  font-size: 30px;
-  line-height: 30px;
-  font-size: 3rem;
-  line-height: 3rem;
-}
-.social-menu ul li a:hover {
-  transition: background, 1000ms ease;
-  background: transparent;
-}
-.social-menu ul li + li {
-  margin-left: 20px;
-  padding-left: 20px;
-  border-left: 1px solid white;
-}
-
-li.twitter a:hover {
-  color: #33ccff;
-}
-
-li.facebook a:hover {
-  color: #3b5998;
-}
-
-li.google a:hover {
-  color: #d6492c;
-}
-
-.edit-link {
-  display: inline-block;
-}
-.edit-link .post-edit-link:visited {
-  color: black;
-}
-.edit-link:before {
-  font-family: 'icomoon';
-  display: inline-block;
-  content: "\e601";
-  margin-right: 10px;
-  color: black;
-}
-
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -391,6 +370,7 @@ a:hover {
   color: white;
   background-color: black;
   outline: 0;
+  -webkit-transition: width 400ms ease, background 400ms ease;
   transition: width 400ms ease, background 400ms ease;
 }
 .home a:active, .home
@@ -772,11 +752,6 @@ hr {
   margin: 0 0 24px;
 }
 
-::-moz-selection {
-  background: yellow;
-  /* Safari */
-}
-
 ::selection {
   background: yellow;
   /* Safari */
@@ -970,42 +945,6 @@ img.wp-smiley,
 .wp-caption.alignleft + ul,
 .wp-caption.alignleft + ol {
   list-style-position: inside;
-}
-
-.home #page {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-content: center;
-      -ms-flex-line-pack: center;
-          align-content: center;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.home header {
-  margin: auto;
-}
-.home nav > ul {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row;
-      -ms-flex-flow: row;
-          flex-flow: row;
-}
-.home .social-menu ul {
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.home .main-menu ul {
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
 }
 
 .cb-slideshow,
@@ -1392,6 +1331,8 @@ img.wp-smiley,
 /* Transitions */
 .cbp-spmenu,
 .cbp-spmenu-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
