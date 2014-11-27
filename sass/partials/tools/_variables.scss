@@ -53,7 +53,7 @@ $base_text:       'Cutive Mono', monospace, sans-serif;
 // Project-specific fonts
 // Put any font families here that are specific to your project
 $oswald:          'Oswald', sans-serif;
-$montserrat:      'Montserrat', sans-serif;
+$montserrat:      'Montserrat', Arial;
 
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
@@ -79,7 +79,7 @@ $blue           : #2098B7;
 $yellow         : #FF0; //rgba(255, 255, 0
 
 $grey           : #5F5F5F;
-$grey-light     : #dddddd;
+$grey-light     : rgb(249, 249, 249);
 $grey-darker    : #cbccce;
 
 $grey-border    : #6E6E6E;

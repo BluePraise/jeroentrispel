@@ -158,6 +158,7 @@ main {
     flex: 1;
     padding: 1em;
     max-width: 960px;
+    min-height: 660px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -215,4 +216,26 @@ footer {
     }
   }
 }
+input, textarea {
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  &:focus {
+    border: 1px solid $grey;
+    background: rgb(249, 249, 249);
+  }
+}
+
+button, input[type="submit"] {
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  font-family: $montserrat;
+  &:hover {
+    background-color: $grey;
+    @extend .yeah-hover;
+  }
+}
+
 

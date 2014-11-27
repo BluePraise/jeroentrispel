@@ -17,3 +17,11 @@
     transition: none;
   }
 }
+
+.yeah-hover {
+  &:hover {
+    -webkit-transition: background, 1000ms ease;
+    transition:         background, 1000ms ease;
+    background: transparent;
+  }
+}
