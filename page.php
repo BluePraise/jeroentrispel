@@ -8,7 +8,16 @@ get_header(); ?>
 <article class="content page-content">
 <?php
   if ( have_posts() ) : while ( have_posts() ) : the_post();
-    the_content();
+
+  	if ( has_post_thumbnail( $post_id )) :
+  		echo "<span class='page-feature-image'>";
+	  		the_post_thumbnail( );
+  		echo "</span>";
+  	endif;
+  	echo "<div class='body-content'>";
+	    the_content();
+	  echo "</div>";  
+    
     endwhile;
     endif;
     jeroentrispel_edit_link();

@@ -141,7 +141,7 @@ function googleweb_fonts_url() {
 //=============================================
 function jeroentrispel_edit_link() {
   if ( ! post_password_required()) :
-    edit_post_link( __( 'Edit', '' ), '<span class="edit-link">', '</span>' );
+    edit_post_link( __( 'Wijzig', '' ), '<span class="edit-link">', '</span>' );
     endif;
 }
 

@@ -139,7 +139,7 @@ h1.page-title a {
 
 h2.page-title {
   color: black;
-  border-bottom: 4px solid black;
+  border-bottom: 1px solid black;
   text-align: right;
   margin-top: 0;
 }
@@ -267,6 +267,10 @@ body:not(.home) main {
 .content {
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
+}
+
+.body-content {
+  padding: 4em;
 }
 
 footer {
@@ -1443,4 +1447,10 @@ img.wp-smiley,
 
 .entry-date {
   margin-right: 20px;
+}
+
+.page-feature-image {
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
 }

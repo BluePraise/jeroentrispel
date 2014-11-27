@@ -32,7 +32,7 @@ h1.page-title {
 
 h2.page-title {
   color: $black;
-  border-bottom: 4px solid $black;
+  border-bottom: 1px solid $black;
   text-align: right;
   margin-top: 0;
   .home & {
@@ -168,6 +168,10 @@ main {
 .content {
   background-color: rgba(255, 255, 255, 0.5);
   color: $black;
+}
+
+.body-content {
+  padding: 4em;
 }
 
 footer {
