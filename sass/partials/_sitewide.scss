@@ -30,11 +30,12 @@ h1.page-title {
   }
 }
 
-h2.page-title {
+h2.page-title,
+h2.entry-title {
   color: $black;
   border-bottom: 1px solid $black;
   text-align: right;
-  margin-top: 0;
+  margin: 0;
   .home & {
     color: $white;
     border-bottom: 4px solid $white;
@@ -45,6 +46,10 @@ nav > ul {
   display: flex;
   flex-flow: row;
   margin-top: 20px;
+  text-align: center;
+  li {
+    display: inline-block;
+  }
 }
 
 .social-menu ul { justify-content: center; }
@@ -99,6 +104,11 @@ li.google a {
     color: $color-google;
   }
 }
+
+.main-menu li > a  {
+  padding: 0.2em;
+}
+
 .edit-link {
   display: inline-block;
   .post-edit-link {
@@ -170,8 +180,12 @@ main {
   color: $black;
 }
 
-.body-content {
-  padding: 4em;
+.body-content,
+.entry-content {
+  padding: 1em;
+  @include at-breakpoint( $desktop ) {
+    padding: 4em;
+  }
 }
 
 footer {

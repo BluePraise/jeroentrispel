@@ -27,9 +27,32 @@
   margin-right: 20px;
 }
 
+.entry-meta {
+  float: right;
+}
+.entry-content {
+  border-bottom: 1px solid $black;
+  margin-bottom: 10px;
+}
 
 .page-feature-image {
+  margin-top: 40px;
   margin-bottom: 5px;
   display: block;
   text-align: center;
+}
+
+.page-nav {
+  ul li {
+    display: inline-block;
+    &.next-link {
+      float: right;
+      &:after {
+        
+      }
+    }
+  }
+}
+li.next-link:before {
+  @extend .icon-tag;
 }

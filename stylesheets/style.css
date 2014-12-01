@@ -75,7 +75,7 @@ body {
   content: "\e602";
 }
 
-.icon-tag:before {
+.icon-tag:before, li.next-link:before {
   content: "\e603";
 }
 
@@ -137,13 +137,15 @@ h1.page-title a {
   line-height: 2.2rem;
 }
 
-h2.page-title {
+h2.page-title,
+h2.entry-title {
   color: black;
   border-bottom: 1px solid black;
   text-align: right;
-  margin-top: 0;
+  margin: 0;
 }
-.home h2.page-title {
+.home h2.page-title, .home
+h2.entry-title {
   color: white;
   border-bottom: 4px solid white;
 }
@@ -152,6 +154,10 @@ nav > ul {
   display: flex;
   flex-flow: row;
   margin-top: 20px;
+  text-align: center;
+}
+nav > ul li {
+  display: inline-block;
 }
 
 .social-menu ul {
@@ -201,6 +207,10 @@ li.facebook a:hover {
 
 li.google a:hover {
   color: #d6492c;
+}
+
+.main-menu li > a {
+  padding: 0.2em;
 }
 
 .edit-link {
@@ -269,8 +279,15 @@ body:not(.home) main {
   color: black;
 }
 
-.body-content {
-  padding: 4em;
+.body-content,
+.entry-content {
+  padding: 1em;
+}
+@media (min-width: 940px) {
+  .body-content,
+  .entry-content {
+    padding: 4em;
+  }
 }
 
 footer {
@@ -1251,180 +1268,6 @@ img.wp-smiley,
   opacity: 1;
 }
 
-/* General styles for all menus */
-.cbp-spmenu {
-  background: #47a3da;
-  position: fixed;
-}
-
-.cbp-spmenu h3 {
-  color: #afdefa;
-  font-size: 1.9em;
-  padding: 20px;
-  margin: 0;
-  font-weight: 300;
-  background: #0d77b6;
-}
-
-.cbp-spmenu a {
-  display: block;
-  color: #fff;
-  font-size: 1.1em;
-  font-weight: 300;
-}
-
-.cbp-spmenu a:hover {
-  background: #258ecd;
-}
-
-.cbp-spmenu a:active {
-  background: #afdefa;
-  color: #47a3da;
-}
-
-/* Orientation-dependent styles for the content of the menu */
-.cbp-spmenu-vertical {
-  width: 240px;
-  height: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.cbp-spmenu-vertical a {
-  border-bottom: 1px solid #258ecd;
-  padding: 1em;
-}
-
-.cbp-spmenu-horizontal {
-  width: 100%;
-  height: 150px;
-  left: 0;
-  z-index: 1000;
-  overflow: hidden;
-}
-
-.cbp-spmenu-horizontal h3 {
-  height: 100%;
-  width: 20%;
-  float: left;
-}
-
-.cbp-spmenu-horizontal a {
-  float: left;
-  width: 20%;
-  padding: 0.8em;
-  border-left: 1px solid #258ecd;
-}
-
-/* Vertical menu that slides from the left or right */
-.cbp-spmenu-left {
-  left: -240px;
-}
-
-.cbp-spmenu-right {
-  right: -240px;
-}
-
-.cbp-spmenu-left.cbp-spmenu-open {
-  left: 0px;
-}
-
-.cbp-spmenu-right.cbp-spmenu-open {
-  right: 0px;
-}
-
-/* Horizontal menu that slides from the top or bottom */
-.cbp-spmenu-top {
-  top: -150px;
-}
-
-.cbp-spmenu-bottom {
-  bottom: -150px;
-}
-
-.cbp-spmenu-top.cbp-spmenu-open {
-  top: 0px;
-}
-
-.cbp-spmenu-bottom.cbp-spmenu-open {
-  bottom: 0px;
-}
-
-/* Push classes applied to the body */
-.cbp-spmenu-push {
-  overflow-x: hidden;
-  position: relative;
-  left: 0;
-}
-
-.cbp-spmenu-push-toright {
-  left: 240px;
-}
-
-.cbp-spmenu-push-toleft {
-  left: -240px;
-}
-
-/* Transitions */
-.cbp-spmenu,
-.cbp-spmenu-push {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-/* Example media queries */
-@media screen and (max-width: 55.1875em) {
-  .cbp-spmenu-horizontal {
-    font-size: 75%;
-    height: 110px;
-  }
-
-  .cbp-spmenu-top {
-    top: -110px;
-  }
-
-  .cbp-spmenu-bottom {
-    bottom: -110px;
-  }
-}
-@media screen and (max-height: 26.375em) {
-  .cbp-spmenu-vertical {
-    font-size: 90%;
-    width: 190px;
-  }
-
-  .cbp-spmenu-left,
-  .cbp-spmenu-push-toleft {
-    left: -190px;
-  }
-
-  .cbp-spmenu-right {
-    right: -190px;
-  }
-
-  .cbp-spmenu-push-toright {
-    left: 190px;
-  }
-}
-.icon-arrow-left:before {
-  font-family: 'icomoon';
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 2;
-  text-align: center;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  text-indent: 8000px;
-  padding-left: 8px;
-  content: "\f061";
-}
-
 .blog #main li {
   margin: 20px 0 50px 0;
 }
@@ -1449,8 +1292,25 @@ img.wp-smiley,
   margin-right: 20px;
 }
 
+.entry-meta {
+  float: right;
+}
+
+.entry-content {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
 .page-feature-image {
+  margin-top: 40px;
   margin-bottom: 5px;
   display: block;
   text-align: center;
+}
+
+.page-nav ul li {
+  display: inline-block;
+}
+.page-nav ul li.next-link {
+  float: right;
 }
